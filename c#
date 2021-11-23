@@ -1,0 +1,210 @@
+using System;
+
+namespace ConsoleApp2
+{
+    class student //الطالب خالص
+    {
+        private string name;//الاسم
+        private string familyname;//لسم العيلة
+        private string gander;//الجنس
+        private int num;//الرقم في سجل المدرسة
+        public void info(string na, string fa, string ga, int nu)
+        {
+            name = na;
+            familyname = fa;
+            gander = ga;
+            num = nu;
+        }
+        public void write()
+        {
+            string name1, familyname1, gander1;
+            int num1;
+            Console.WriteLine("enter the student informaion!!");
+            Console.Write("enter the name:");
+            name1 = (Console.ReadLine());
+            Console.Write("enter the family name:");
+            familyname1 = (Console.ReadLine());
+            Console.Write("enter the gander:");
+            gander1 = Console.ReadLine();
+            Console.Write("enter the num:");
+            num1 = Convert.ToInt32(Console.ReadLine());
+        }
+    }
+    //end student 
+    class teacher //المدرس خالص 
+    {
+        private string name;
+        private string sabjact;
+        private string gander;
+        private int old;
+        private int codenum;
+
+        public void info(string na, string sa, string gan, int o, int cc)
+        {
+            name = na;
+            sabjact = sa;
+            old = o;
+            gander = gan;
+            codenum = cc;
+        }
+
+        public void write1()
+        {
+            string name1, sabjact1, gander1, old1;
+            int number;
+            Console.WriteLine("enter the teacher info(*&*)");
+            Console.Write("enter the name:");//الاسم
+            name1 = Console.ReadLine();
+            Console.Write("enter the sabjact:");//المادة
+            sabjact1 = Console.ReadLine();
+            Console.Write("enter the gander:");//الجنس 
+            gander1 = Console.ReadLine();
+            Console.Write("enter his old:");//العمر
+            old1 = Convert.ToString(Console.ReadLine());
+            Console.Write("enter his number code:");//الرقم الخاص بالمدرس 
+            number = Convert.ToInt32(Console.ReadLine());
+        }
+    }
+    //end teacher
+    class lacshar// المحاضرات 
+    {
+        private string name;
+        private string migor;
+        private string theacher;
+        private int numlacshar;
+
+        public void infolacshar(string mi, string th, int nu, string nam)
+        {
+            name = nam;
+            migor = mi;
+            theacher = th;
+            numlacshar = nu;
+
+        }
+        public void write2()
+        {
+            string migor, lacshername, theacher;
+            int numlacshar;
+            Console.WriteLine("enter the the lacshar informion:");
+            Console.Write("lacshar migor:");//اختصاص المحاضرة
+            migor = Console.ReadLine();
+            Console.Write("enter the lacsher name:");//اسم المحاضرة 
+            lacshername = Console.ReadLine();
+            Console.Write("the theacher of lacshar:");//مدرس لاالمحاضرة
+            theacher = Console.ReadLine();
+            Console.Write("lacshar rank:");//رقم المحاضرة او ترتيب الماضرة
+            numlacshar = Convert.ToInt32(Console.ReadLine());
+        }
+
+    }
+    //end lacshar
+    class yaers
+    {
+        private int numstudint;
+        private int numtheashar;
+        private int numlaclass;
+
+        public void infoyaers(int st, int th, int l)
+        {
+            numstudint = st;
+            numtheashar = th;
+            numlaclass = l;
+        }
+        public void write3()
+        {
+            int numstudint, numtheashar, numlaclass;
+            Console.WriteLine("enter the yaer informion:");
+            Console.Write("enter the all student in this yaer:");//عدد الطلاب
+            numstudint = Convert.ToInt32(Console.ReadLine());
+            Console.Write("enter all theasher in this yaer:");//عدد لبمغبمسن في السنة
+            numtheashar = Convert.ToInt32(Console.ReadLine());
+            Console.Write("enter the all class in this yaer:");//عدد الصفوف
+            numlaclass = Convert.ToInt32(Console.ReadLine());
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        sa:
+            char q;
+            Console.WriteLine("if you wanna to insart info in student prees 1\n"
+                            + "if you wanna to insart info in teacher prees 2\n"
+                            + "if you wanna to insart info in lacshar prees 3\n"
+                            + "if you wanna to insart info in yaers prees 4\n"
+                            + "if you wanna to insart all info prees 5");
+            q = (char)Convert.ToInt32(Console.ReadLine());
+            if (q == 1)
+            {
+                student s = new student();
+                s.write();
+            }
+            else if (q == 2)
+            {
+                teacher t = new teacher();
+                t.write1();
+            }
+            else if (q == 3)
+            {
+                lacshar l = new lacshar();
+                l.write2();
+            }
+            else if (q == 4)
+            {
+                yaers y = new yaers();
+                y.write3();
+            }
+            else if(q==5)
+            {
+                student s = new student();
+                s.write();
+                teacher t = new teacher();
+                t.write1();
+                lacshar l = new lacshar();
+                l.write2();
+                yaers y = new yaers();
+                y.write3();
+            }
+            {
+                char a;
+                Console.WriteLine("if you wanna delet prees 0\n" +
+                                  "if you wanna rbite prees 6\n" +
+                                  "if you wanna content prees the secand num");
+                a = (char)Convert.ToInt32(Console.ReadLine());
+                if (a == 6)
+                {
+                    goto sa;
+                }
+                if (a == 1)
+                {
+                    student s = new student();
+                    s.write();
+                }
+                else if (a == 2)
+                {
+                    teacher t = new teacher();
+                    t.write1();
+                }
+                else if (a == 3)
+                {
+                    lacshar l = new lacshar();
+                    l.write2();
+                }
+                else if (a == 4)
+                {
+                    yaers y = new yaers();
+                    y.write3();
+                }
+                else if (a == 0)
+                {
+                    Console.WriteLine("delet comblet");
+                }
+
+            }
+
+        }
+    }
+}
+
+

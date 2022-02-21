@@ -1,0 +1,362 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media(max-width:768px) {
+    .contenr {
+        width: 400px;
+    }
+    .the-heder-element {
+        padding: 0px 0px;
+        border: solid #49484b 1px;
+        background-color: var(--main-color);
+        border-radius: 0px 0px;
+        margin: -8px 0px 0px;
+    }
+    .contenr {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15ox;
+        background-color: #d4b729;
+        border: solid #d4b729 1px;
+        border-radius: 25px;
+    }
+    .the-heder-element .contenr {
+        display: flex;
+        /*لوضع مسافة بين العناصر في الهدر*/
+        justify-content: space-between;
+        /*لجعل كل العناصر على نفس المستوى*/
+        align-items: center;
+    }
+    /*الصورة*/
+    .the-heder-element .logo {
+        width: 180px;
+    }
+    .the-heder-element .link {
+        position: relative;
+    }
+    /*القواىم*/
+    .the-heder-element .link .icon1 {
+        width: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    /*حركت الفاىمة */
+    .the-heder-element .link:hover .icon1 span:nth-child(2) {
+        width: 100%;
+    }
+    /*الاعدادات الافتراضية للايقونة */
+    .the-heder-element .link .icon1 span {
+        background-color: #49484b;
+        margin-bottom: 3px;
+        margin-right: 2px;
+        height: 3px;
+        border-radius: 25px;
+    }
+    /*ملاحظة(التغير) ممكن غير الشكل لنصف راىرة بتكتمل لما بتضغط عليا */
+    /*تصميم الايكون الخط الاول الابن لاول*/
+    .the-heder-element .link .icon1 span:first-child {
+        width: 100%;
+        height: 6px;
+    }
+    .the-heder-element .link .icon1 span:nth-child(2) {
+        width: 60%;
+        height: 6px;
+        /*لجعل حركت الهوفر اكثر جمل وسلسة*/
+        transition: 0.3s;
+    }
+    .the-heder-element .link .icon1 span:last-child {
+        width: 100%;
+        height: 6px;
+    }
+    /*الاعداد الاساسة لاضهار القاىمة */
+    .the-heder-element .link ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
+        right: 0;
+        background-color: #49484b;
+        min-width: 150px;
+        margin-top: 10px;
+        display: none;
+        z-index: 1;
+    }
+    /*هنا اضهرنا القاىم عند الكيس على الايقونة */
+    .the-heder-element .link:hover ul {
+        display: block;
+        transition: 0.6s;
+    }
+    /*لاعداد السهم الواصل بين الايقونة والقاىمة */
+    .the-heder-element .link ul:before {
+        content: "";
+        border-width: 10px;
+        border-style: solid;
+        /*احمر اخضر ازرق اسود الاوان للتعليمة عندما وضعت  تراند برنس اختفو وبقي المثلث الثالث الاعلى*/
+        border-color: transparent transparent #49484b transparent;
+        position: absolute;
+        left: 130px;
+        top: -20px;
+    }
+    .the-heder-element .link ul li a {
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        color: #e2ce22;
+    }
+    .the-heder-element .link ul li a:hover {
+        padding-left: 25px;
+        transition: 0.3s;
+    }
+    .the-heder-element .link ul li:not(:last-child) {
+        border-bottom: solid 1px#e2ce22;
+    }
+}
+
+
+/*medem*/
+
+@media(min-width:768px),
+(max-width:990) {
+    .contenr {
+        width: 700px;
+    }
+    /*خلصنا الهدار ممكن التعديل عليه بعدين ازا لزم الامر */
+    .the-heder-element {
+        margin: -8px 0px 0px;
+        padding: 0px;
+        background-color: var(--main-color);
+        border: 1px var(--main-color) solid;
+    }
+    .contenr {
+        padding: auto;
+        margin: auto;
+        border: 1px var(--sec-color) solid;
+        background-color: var(--sec-color);
+        border-radius: 25px;
+    }
+    .the-heder-element .contenr {
+        display: flex;
+        justify-content: space-between;
+    }
+    .the-heder-element .logo {
+        width: 180px;
+    }
+    .contenr ul li {
+        display: inline;
+    }
+    .contenr li a {
+        width: 100%;
+        text-decoration: none;
+        padding-left: 5px;
+        padding-right: 0px;
+        border-left: 3px var(--main-color) solid;
+        color: var(--main-color);
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .contenr ul li:last-child {
+        padding-right: 15px;
+    }
+    .contenr li a:hover {
+        text-shadow: 3px 3px 15px var(--main-color);
+    }
+}
+
+
+/*larg*/
+
+@media(min-width:1010px) {
+    .contenr {
+        width: 1000px;
+    }
+}
+
+
+/*اعدادات الهيدر كلا بالميديا كويري */
+
+:root {
+    --main-color: #49484b;
+    --sec-color: #d4b729;
+    --thir-color: rgb(48, 57, 82);
+    --max-color: repeating-linear-gradient(90deg, rgb(148, 103, 5), rgb(48, 57, 82));
+    --for-color: rgb(148, 103, 5);
+}
+
+.title-to-sicsion {
+    color: rgb(148, 103, 5);
+    font-size: 64px;
+    text-align: center;
+    font-weight: 800px;
+    margin-bottom: auto;
+    letter-spacing: 0.3;
+    transition: 0.4s;
+    background-color: var(--max-color);
+    padding: 10px 0px 40px;
+    margin-top: -8px;
+    background: var(--max-color);
+}
+
+.title-to-sicsion:hover {
+    text-shadow: 1px 3px 15px rgb(48, 57, 82);
+}
+
+.title-to-sicsion+p {
+    margin-top: -5px;
+    text-align: center;
+    color: var(--thir-color);
+    font-size: 24px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/*بلشنا بالصفحة هون */
+
+.the-landing {
+    background-image: url(../imgback.png);
+    background-size: cover;
+    /*ال64 هو الحجم الافتراضh1 نقصتو من كل الحدود */
+    height: calc(100vh - 64px);
+    /* بدون ال z-index كان طلع تحتو على مبداء اليؤات في الادوبي 
+    طبعا حطيتا للخاصية في القواىم مشان تطلع */
+    position: relative;
+    text-align: center;
+}
+
+.the-landing .content-in-landing {
+    /* بالبوسشن لحال بطلع الشكل معطوب */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* لزالك حطيت هو الترانسفورم ترانسليت */
+    transform: translate(-50%, -50%);
+    width: 600px;
+    max-width: 100%;
+}
+
+.the-landing .content-in-landing h1 {
+    margin: 0px;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--sec-color);
+}
+
+.the-landing .content-in-landing p {
+    font-size: 20px;
+    line-height: 0.5;
+    font-weight: bold;
+    color: var(--sec-color);
+}
+
+
+/*انتهى هنا الصفحة البوش*/
+
+
+/*informion the compeny */
+
+.imformion {
+    padding: 0px 50px;
+    color: var(--sec-color);
+    background: var(--max-color);
+    position: relative;
+    ;
+}
+
+.imformion .contenr1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.imformion .icon2 {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--main-color);
+    border-radius: 25px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.imformion .icon2:hover {
+    border-radius: 50px;
+}
+
+.imformion .icon2 i {
+    font-size: 25px;
+    color: var(--sec-color);
+}
+
+.imformion .icon2 h4 {
+    margin: 10px 0px 0px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.imformion .icon2 p {
+    font-size: 20px;
+}
+
+
+/*end informion the compeny */
+
+
+/*start serves navcion*/
+
+.serves {
+    padding: 20px 40px 20px 40px;
+    color: var(--main-color);
+    background: var(--max-color);
+}
+
+.serves .contenar2 {
+    display: flex;
+}
+
+.contenar2 .in-the-contenar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    background-color: var(--main-color);
+    border-radius: 25px;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+    width: 80%;
+}
+
+.in-the-contenar .card {
+    background-color: var(--for-color);
+    border-radius: 15px;
+    margin: 10px;
+    padding: auto;
+    font-weight: bold;
+    font-size: 20px;
+    border: 0px;
+}
+
+
+/*end serves navcion*/
+
+
+/*start iocation*/
+
+.content3 {
+    margin: auto;
+    padding: auto;
+}
+
+.content3 .first-scshan {
+    display: flex;
+}
+
+
+/*end iocation*/
